@@ -2,9 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-.wrapper {
-	@apply flex justify-center items-center h-screen;
+:root {
+  /* colors */
+  --white: #fafafa;
+  --dark: #333333;
+  --gray: #e5e7eb;
+  --primary: #ef5644;
+  --primary-dark: #dd3e2b;
+  --secondary: #53d690;
+  --dangrous: #f70000f3;
+  --warning: #f1ce2f;
+  --info: #006fca;
+
+  /* varibles */
+  --radius: 5px;
 }
-.card {
-	@apply p-20;
+
+/* background */
+.sn-bg-primary {
+  background-color: var(--primary);
+}
+.sn-bg-secondary {
+  background-color: var(--secondary);
+}
+.sn-bg-gray {
+  background-color: var(--gray);
+}
+.sn-bg-white {
+  background-color: var(--white);
+}
+.sn-bg-dark {
+  background-color: var(--dark);
+}
+/*  text-colores */
+.sn-text-primary {
+  color: var(--primary);
+}
+.sn-text-white {
+  color: var(--white);
+}
+/* border */
+
+.sn-nav-border-l {
+  border-left: solid 1px var(--primary-dark);
+}
+.sn-nav-border-r {
+  border-right: solid 1px var(--primary-dark);
+}
+
+.sn-border-radius {
+  border-radius: var(--radius);
+}
+.sn-border-l-none {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+.sn-border-r-none {
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+/* onhover */
+.hover\:sn-text-white:hover {
+  color: var(--white);
+}
+.dark .dark\:sn-bg-dark {
+  background-color: #111827;
+}
+.dark .dark\:sn-text-white {
+  color: #e7e8f2;
 }

@@ -3,18 +3,8 @@ module.exports = {
 		mode: 'layers',
 		content: ['./public/**/*.html'],
 	},
-	darkMode: false, // or 'media' or 'class'
-	theme: {
-		extend: {
-			colors: {
-				cwc: {
-					red: '#E84977',
-					blue: '#49AADE',
-					gray: '#222222',
-				},
-			},
-		},
-	},
+	darkMode: "class", // or 'media' or 'class'
+	theme: {},
 	variants: {
 		extend: {},
 	},
