@@ -1,0 +1,14 @@
+$colors:(
+    green:#63D56D,
+    gold:#f19b19,
+    black:#333,
+    gray:#ccc,
+    white:#fff,
+
+);
+
+@function color ($name) {
+    @return map-get($colors, $name)
+}
+
+$radius:5px;

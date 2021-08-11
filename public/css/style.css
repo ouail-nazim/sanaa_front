@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
+.bg-green {
+  background-color: #63D56D;
+}
+
+.text-green {
+  color: #63D56D;
+}
+
+.bg-gold {
+  background-color: #f19b19;
+}
+
+.text-gold {
+  color: #f19b19;
+}
+
+.bg-black {
+  background-color: #333;
+}
+
+.text-black {
+  color: #333;
+}
+
+.rounded {
+  border-radius: 5px;
+}
+
+.rounded-full {
+  border-radius: 50%;
+}
+
+.top-dropdown-menu {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 15px;
+}
+/*# sourceMappingURL=style.css.map */

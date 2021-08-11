@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+
+// import extra files
+@import './var';
+
+.bg-green{
+    background-color: color(green);
+}
+.text-green{
+    color: color(green);
+}
+.bg-gold{
+    background-color: color(gold);
+}
+.text-gold{
+    color: color(gold);
+}
+.bg-black{
+    background-color: color(black);
+}
+.text-black{
+    color: color(black);
+}
+.rounded{
+    border-radius: $radius;
+}
+.rounded-full{
+    border-radius: 50%;
+}
+
+// top-dropdown-menu
+
+.top-dropdown-menu{
+    width: fit-content;
+    margin-top: 15px;
+}
