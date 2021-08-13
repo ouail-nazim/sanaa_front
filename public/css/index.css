@@ -2,6 +2,15 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 /*# sourceMappingURL=index.css.map */
+
+header {
+  height: 10vh;
+}
+
+main {
+  background: #eeeeee;
+  min-height: 90vh;
+}
