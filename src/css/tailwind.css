@@ -95,6 +95,9 @@
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
 }
+.sn-border-primary{
+  border-color: var(--primary);
+}
 
 /* onhover */
 .hover\:sn-text-white:hover {
@@ -119,6 +122,9 @@
   background-color: var(--primary);
   color: var(--white);
   border-radius: var(--radius);
+}
+.sn-btn-xl{
+  padding: .75rem !important;
 }
 .sn-btn-gray {
   @apply py-1 px-2 focus-within:border-transparent focus:outline-none;
@@ -147,3 +153,5 @@
 .sn_menu_item{
   @apply text-gray-700 block px-4 py-2 text-sm break-words;
 }
+
+
