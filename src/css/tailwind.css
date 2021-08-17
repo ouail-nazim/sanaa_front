@@ -136,3 +136,14 @@
 .sn-footer-app-btn:hover {
   color: var(--primary);
 }
+
+
+/* dorpDown */
+.sn_menu{
+  @apply origin-top-right absolute right-0 mt-2 w-56 shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none;
+  z-index: 999;
+  border-radius: var(--radius);
+}
+.sn_menu_item{
+  @apply text-gray-700 block px-4 py-2 text-sm break-words;
+}
