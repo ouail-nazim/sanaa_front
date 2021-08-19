@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @import "compass/css3";
 
 :root {
@@ -200,4 +201,39 @@
 }
 .sn-modal-content-buttons{
   @apply px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse;
+}
+
+
+/* comments */
+.comments{
+  max-height: 85vh;
+  padding-bottom: 10px;
+}
+.comments #user-comments{
+  max-height: 65vh;
+  overflow-y: scroll;
+}
+.comments #user-comments-request{
+  max-height: 70vh;
+  padding-bottom: 10px;
+  overflow-y: scroll;
+}
+
+.comments #add-comments{
+  height: 8vh;
+}
+
+
+.sn-input{
+  @apply block w-full sm:text-sm rounded-md focus:ring-0 ;
+  border: .12rem solid;
+  border-color:var(--gray) ;
+  border-radius: var(--radius) !important;
+}
+.sn-input:focus{
+  outline: var(--primary);
+  border-color:var(--primary);			
+}
+.sn-input-label{
+  @apply block text-sm font-medium text-gray-700 py-2
 }

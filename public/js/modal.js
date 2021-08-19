@@ -1,19 +1,24 @@
 class Modal{
     constructor(btn){
         this.btnTrigger=btn;
-        this.model=document.querySelector(btn.getAttribute('data-target'));
-        this.btnClose=this.model.querySelector('[data-toggle="close-modal"]');
+        this.modal=document.querySelector(btn.getAttribute('data-target'));
+        this.btnClose=this.modal.querySelector('[data-toggle="close-modal"]');
 
         this.btnTrigger.addEventListener('click',()=>this.showModal())
         this.btnClose.addEventListener('click',()=>this.closeModal())
+        this.modal.addEventListener('click',e=>{
+            if(e.target.getAttribute('data-toggle')==="overlay"){
+                this.closeModal()
+            }
+        })  
     }
 
     showModal=()=>{
-        this.model.classList.remove('hidden');
+        this.modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
     }
     closeModal=()=>{
-        this.model.classList.add('hidden');
+        this.modal.classList.add('hidden');
         document.body.style.overflow = '';
     }
 }
