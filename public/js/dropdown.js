@@ -11,7 +11,9 @@ window.addEventListener('click',e=>{
 Array.from(document.querySelectorAll('[role="menu-button"]')).forEach(menu_button => {
     menu_button.addEventListener('click',()=>{
         document.querySelectorAll('[role="menu"]').forEach(menu => {
+            if(menu_button.nextElementSibling !== menu ){
                 menu.classList.add('hidden');
+            }  
         })
         menu_button.nextElementSibling.classList.toggle("hidden")
     })

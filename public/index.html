@@ -16,6 +16,7 @@
 	<!-- custopm style -->
 	<link rel="stylesheet" href="css/index.css" />
 	<link rel="stylesheet" href="css/style.css" />
+	
 </head>
 
 <body>
@@ -105,8 +106,7 @@
 						</div>
 					</div>
 				</div>
-				
-
+				<!-- show side bar -->
 				<button class="md:hidden ml-4 px-2 sn-text-white focus:outline-none">
 					<i class="fa fa-bars text-xl" aria-hidden="true"></i>
 				</button>
@@ -267,35 +267,37 @@
 								class="h-14 w-14 rounded-full">
 							</div>
 							<div class="flex-1 flex flex-row justify-between md:justify-end">
-								<button class="sn-btn-gray sn-btn-xl md:ml-2">Add request</button>
-								<button class="sn-btn-primary sn-btn-xl md:ml-2" data-toggle="modal" data-target="#exampleModal">
+								<!-- modal -->
+								<button class="sn-btn-gray sn-btn-xl md:ml-2" data-toggle="modal" data-target="#add_request">
+									Add request
+								</button>
+								<button class="sn-btn-primary sn-btn-xl md:ml-2" data-toggle="modal" data-target="#add_service">
 									Add service
 								</button>
-								<div id="exampleModal" class="hidden sn-container flex flex-col lg:flex-row justify-between">
-									<!-- This example requires Tailwind CSS v2.0+ -->
-									<div id="exampleModal" class=" fixed z-10 inset-0 overflow-y-auto">
-										<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+								
+								<div id="add_service" class="modal absolute hidden">
+									<div class="sn-modal-container">
+										<div class="sn-modal">
 											<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-											<div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle w-lg">
-												<div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-													<div class="sm:flex sm:items-start">
-														<div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-															<h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-																Deactivate account
-															</h3>
-															<div class="mt-2">
-																<p class="text-sm text-gray-500">
-																Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone.
-																</p>
-															</div>
-														</div>
+											<div class="sn-modal-content">
+												<div class="sn-modal-content-body ">
+													<h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+														Add service
+													</h3>
+													<div class="mt-2 text-sm text-gray-500">
+														Are you sure you want to deactivate your account?
+														Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, vel enim iure totam quam voluptas praesentium et optio, ducimus aut, debitis molestiae. Quaerat illum earum, eos repellendus nobis doloremque aliquid.
+														Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, vel enim iure totam quam voluptas praesentium et optio, ducimus aut, debitis molestiae. Quaerat illum earum, eos repellendus nobis doloremque aliquid.
+														Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, vel enim iure totam quam voluptas praesentium et optio, ducimus aut, debitis molestiae. Quaerat illum earum, eos repellendus nobis doloremque aliquid.
+														Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, vel enim iure totam quam voluptas praesentium et optio, ducimus aut, debitis molestiae. Quaerat illum earum, eos repellendus nobis doloremque aliquid.
+														Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, vel enim iure t
 													</div>
 												</div>
-												<div class="bg-white px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-													<button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
-														Deactivate
+												<div class="sn-modal-content-buttons flex flex-col">
+													<button type="button" class="sn-btn-primary m-2">
+														Post Now
 													</button>
-													<button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+													<button type="button" data-toggle="close-modal" class="sn-btn-gray m-2">
 														Cancel
 													</button>
 												</div>
@@ -303,6 +305,38 @@
 										</div>
 									</div>
 								</div>
+								<div id="add_request" class="modal absolute hidden">
+									<div class="sn-modal-container">
+										<div class="sn-modal">
+											<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+											<div class="sn-modal-content">
+												<div class="sn-modal-content-body ">
+													<h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+														Add request
+													</h3>
+													<div class="mt-2 text-sm text-gray-500">
+														Are you sure you want to deactivate your account?
+														Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, vel enim iure totam quam voluptas praesentium et optio, ducimus aut, debitis molestiae. Quaerat illum earum, eos repellendus nobis doloremque aliquid.
+														Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, vel enim iure totam quam voluptas praesentium et optio, ducimus aut, debitis molestiae. Quaerat illum earum, eos repellendus nobis doloremque aliquid.
+														Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, vel enim iure totam quam voluptas praesentium et optio, ducimus aut, debitis molestiae. Quaerat illum earum, eos repellendus nobis doloremque aliquid.
+														Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, vel enim iure totam quam voluptas praesentium et optio, ducimus aut, debitis molestiae. Quaerat illum earum, eos repellendus nobis doloremque aliquid.
+														Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, vel enim iure t
+													</div>
+												</div>
+												<div class="sn-modal-content-buttons flex flex-col">
+													<button type="button" class="sn-btn-primary m-2">
+														Post Now
+													</button>
+													<button type="button" data-toggle="close-modal" class="sn-btn-gray m-2">
+														Cancel
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								
 							</div>
 						</div>
 					</div>

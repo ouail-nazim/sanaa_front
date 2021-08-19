@@ -124,7 +124,7 @@
   border-radius: var(--radius);
 }
 .sn-btn-xl{
-  padding: .75rem !important;
+  padding: .5rem !important;
 }
 .sn-btn-gray {
   @apply py-1 px-2 focus-within:border-transparent focus:outline-none;
@@ -146,12 +146,45 @@
 
 /* dorpDown */
 .sn_menu{
-  @apply origin-top-right absolute right-0 mt-2 w-56 shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none;
+  @apply origin-top-right absolute right-0 rounded-md mt-2 w-56 shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none;
   z-index: 999;
-  border-radius: var(--radius);
+  
 }
 .sn_menu_item{
   @apply text-gray-700 block px-4 py-2 text-sm break-words;
 }
 
+/* modal */
 
+.sn-modal{	
+  max-height: 100vh;
+  max-width: 98vw;
+}
+.sn-modal-container{
+  @apply fixed z-10 inset-0 overflow-y-hidden ;
+}
+.sn-modal-content{
+  @apply inline-block transform flex flex-col justify-between mx-auto my-10 ;
+  max-height: 90vh;
+  max-width: 90%;
+  border-radius: var(--radius);
+  box-shadow: 1px 0px 2px rgb(0 0 0 / 24%);
+  background-color: var(--white);
+}
+.sn-modal-content-body{ 
+  @apply mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left px-4 pt-5 pb-2 sm:p-4 sm:pb-4;
+  max-height: 75vh;
+  overflow-y: scroll;
+}
+.sn-modal-content-body::-webkit-scrollbar {
+  display: none;
+}
+@media screen and (max-width: 640px) {
+  .sn-modal-content-body{
+    max-height: 65vh;
+    overflow-y: scroll;
+  }
+}
+.sn-modal-content-buttons{
+  @apply px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse;
+}
