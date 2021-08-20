@@ -39,6 +39,9 @@
 .sn-line {
   @apply w-full border-b-2 my-4;
 }
+.sn-line-dotted{
+  @apply w-full border-b-2 my-4 border-dotted ;
+}
 
 
 
