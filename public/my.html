@@ -1,0 +1,927 @@
+<html lang="en" class="">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Sanaa</title>
+
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+	<!-- scripts -->
+	<script src="../node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+	<!-- bootstrap -->
+	<!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" /> -->
+	<!-- tailwind -->
+	<link rel="stylesheet" href="css/tailwind.css" />
+	<!-- custopm style -->
+	<link rel="stylesheet" href="css/index.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	
+</head>
+
+<body>
+	<div id="app">
+		<button id="scrollToTop" onclick="_scrollTo('app')" class="hidden fixed sn-btn-primary bottom-3 right-4 flex items-center ">
+			<i class="fas fa-sort-up text-xl pt-1"></i>
+		</button>
+		<!-- TopNavBar Desktop -->
+		<header class="sn-bg-primary dark:sn-bg-dark fixed w-screen z-10">
+			<div class="sn-container flex flex-row items-center justify-between h-full">
+				<div class="left-content flex flex-row items-center justify-start ">
+					<!-- webSite logo -->
+					<div class="logo w-10 h-10 md:w-14 md:h-14">
+						<a href="index.html" title=""><img src="/public/images/logo.png" alt="logo"></a>
+					</div>
+					<!-- search bar -->
+					<div class="search-bar ml-4">
+						<form action="" class="sn-bg-white sn-border-radius w-40 lg:w-96 flex flex-row justify-between" >
+							<input type="search" placeholder="Search..."
+								class="w-9/12 md:w-10/12 py-2 px-5 sn-border-radius focus:ring-0 focus:outline-none border-none">
+							<button type="submit"
+								class="sn-text-primary sn-bg-gray w-3/12 md:w-2/12 text-base md:text-lg font-light sn-border-radius sn-border-l-none ">
+								<i class="fa fa-search font-light" /></i>
+							</button>
+						</form>
+					</div>
+				</div>
+				<div class="right-content flex flex-row justify-end">
+					<!-- nav bar links -->
+					<nav class="hidden md:flex links  items-center text-white ">
+						<ul class="flex flex-row mx-3">
+							<li>
+								<a href="#" class="mx-4 my-2 flex flex-col items-center hover:sn-text-white">
+									<i class="fa fa-home text-sm"></i>
+									<span>Home</span>
+								</a>
+							</li>
+							<li>
+								<a href="/public/post.html" class="mx-4 my-2 flex flex-col items-center hover:sn-text-white">
+									<i class="fa fa-info text-sm "></i>
+									<span>About</span>
+								</a>
+							</li>
+							<li>
+								<a href="/public/request.html" class="mx-4 my-2 flex flex-col items-center hover:sn-text-white">
+									<i class="fa fa-users text-sm"></i>
+									<span>Friends</span>
+								</a>
+							</li>
+							<li class="relative inline-block text-left" >
+								<a role="menu-button" href="#" class="mx-4 my-2 flex flex-col items-center hover:sn-text-white">
+									<i role="menu-button-content" class="fa fa-users text-sm"></i>
+									<span role="menu-button-content">Other</span>
+								</a>
+								<div role="menu" class="hidden sn_menu">
+									<div class="py-1">
+										<a href="#" class="sn_menu_item">item1</a>
+										<a href="#" class="sn_menu_item">item2</a>
+										<a href="#" class="sn_menu_item">item3</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</nav>
+					<!-- nav bar user info -->
+					<div class="relative inline-block text-left" >
+						<div role="menu-button" class="user cursor-pointer flex flex-row px-2 py-2">
+							<img src="https://via.placeholder.com/50" alt="user" class="h-8 w-8 md:h-10 md:w-10 rounded-full" role="menu-button-content" >
+							<div class="flex flex-row mx-2 justify-centern items-center" role="menu-button-content">
+								<p role="menu-button-content" class="hidden md:inline max-w-xs max-h-12 truncate sn-text-white hover:sn-text-white">
+									Ouail nazim
+								</p>
+								<i role="menu-button-content" class="fa fa-sort-down sn-text-white -mt-2 ml-1"></i>
+							</div>
+						</div>
+						<div role="menu" class="hidden sn_menu">
+							<div class="py-1">
+								<a href="/public/profile.html" class="sn_menu_item">
+									<i class="fa fa-user mr-2"></i>
+									<span>Profile</span>
+								</a>
+								<a href="#" class="sn_menu_item">
+									<i class="far fa-folder-open mr-2"></i>
+									<span>My requests</span>
+								</a>
+								<a href="./edit.html" class="sn_menu_item">
+									<i class="fa fa-cogs mr-2"></i>
+									<span>Settings</span>
+								</a>
+								<div class="sn-line" style="margin: 0;"></div>
+								<a href="./welcom.html" class="sn_menu_item ">
+									<i class="fa fa-cogs mr-2 sn-text-primary"></i>
+									<span class="sn-text-primary">Log out</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- show side bar -->
+					<button class="md:hidden ml-4 px-2 sn-text-white focus:outline-none">
+						<i class="fa fa-bars text-xl" aria-hidden="true"></i>
+					</button>
+				</div>
+			</div>
+		</header>
+		<!-- main content of page -->
+		
+		<main class="pt-16">
+			<div class="sn-container flex flex-col lg:flex-row justify-between">
+				
+				<!-- middel -->
+				<div class="flex-1 ">
+					<div class="mx-3">
+						<!-- create posts -->
+						<div class="sn-bg-light sn-box my-3 px-3 py-6 border-t-4 sn-border-primary">
+							<div class="flex flex-row items-center justify-between">
+								<div class="sn-text-dark text-2xl">
+									My Requests
+								</div>
+								<div class="flex-1 flex flex-row justify-end">
+									<!-- modal -->
+									<button class="sn-btn-gray sn-btn-xl ml-2" data-toggle="modal" data-target="#add_request">
+										Add request
+									</button>
+									<button class="sn-btn-primary sn-btn-xl ml-2" data-toggle="modal" data-target="#add_service">
+										Add service
+									</button>	
+									<div id="add_service" class="modal absolute hidden">
+										<div class="sn-modal-container">
+											<div class="sn-modal">
+												<div data-toggle="overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+												<div class="sn-modal-content">
+													<div class="sn-modal-content-body ">
+														<h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+															Add service
+														</h3>
+														<div class="mt-2 text-sm text-gray-500">
+															<div class="mt-5 md:mt-0 md:col-span-2">
+																<form action="#" method="POST">
+																	<div class="grid grid-cols-6 gap-x-2  ">
+																		<!-- Covers -->
+																		<div class="col-span-6">
+																			<div>
+																				<label class="sn-input-label">
+																					Covers
+																				</label>
+																				<label for="file-upload" class="sn-input py-1 ">
+																					<div class="space-y-1 text-center">
+																					<svg class="mx-auto h-8 w-8 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+																						<path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+																					</svg>
+																					<div class="text-sm text-gray-600">
+																						<label for="file-upload" class="sn-text-primary">
+																						<span>Upload a file</span>
+																						<input id="file-upload" name="file-upload" type="file" class="sr-only">
+																						</label>
+																						<p class="pl-1">or drag and drop</p>
+																					</div>
+																					<p class="text-xs text-gray-500">
+																						PNG, JPG, GIF up to 10MB
+																					</p>
+																					</div>
+																				</label>
+																			</div>
+																		</div>
+																		<!-- Title -->
+																		<div class="col-span-6 md:col-span-3">
+																			<label for="first-name" class="sn-input-label">Title</label>
+																			<input type="text" name="first-name" id="first-name" autocomplete="given-name" class="sn-input">
+																		</div>
+																		<!-- Price -->
+																		<div class="col-span-6 md:col-span-3">
+																			<label for="last-name" class="sn-input-label">Price</label>
+																			<input type="text" name="last-name" id="last-name" autocomplete="family-name" class="sn-input">
+																		</div>
+																		<!-- Categorys -->
+																		<div class="col-span-6 md:col-span-2">
+																			<label for="last-name" class="sn-input-label">Categorys</label>
+																			<input type="text" name="last-name" id="last-name" autocomplete="family-name" class="sn-input form-multiselect">
+																		</div>
+																		<!-- Tags -->
+																		<div class="col-span-6 md:col-span-2">
+																			<label for="last-name" class="sn-input-label">Tags</label>
+																			<input type="text" name="last-name" id="last-name" autocomplete="family-name" class="sn-input">
+																		</div>
+																		<!-- Delivery to -->
+																		<div class="col-span-6 md:col-span-2">
+																			<label for="last-name" class="sn-input-label">Delivery to</label>
+																			<input type="text" name="last-name" id="last-name" autocomplete="family-name" class="sn-input">
+																		</div>
+																		<!-- Description -->
+																		<div class="col-span-6 ">
+																			<label for="description" class="sn-input-label">Description</label>
+																			<textarea name="description" id="description" class="sn-input h-20"></textarea>
+																		</div>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+													<div class="sn-modal-content-buttons flex flex-col">
+														<button type="button" class="sn-btn-primary m-2">
+															Post Now
+														</button>
+														<button type="button" data-toggle="close-modal" class="sn-btn-gray m-2">
+															Cancel
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="add_request" class="modal absolute hidden">
+										<div class="sn-modal-container">
+											<div class="sn-modal">
+												<div data-toggle="overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+												<div class="sn-modal-content">
+													<div class="sn-modal-content-body ">
+														<h3 class="text-lg leading-6 font-medium text-gray-900">
+															Add request
+														</h3>
+														<div class="mt-2 text-sm text-gray-500">
+															<div class="mt-5 md:mt-0 md:col-span-2">
+																<form action="#" method="POST">
+																	<div class="grid grid-cols-6 gap-3">
+																		<!-- Title -->
+																	<div class="col-span-6">
+																		<label for="first-name" class="sn-input-label">Title</label>
+																		<input type="text" name="first-name" id="first-name" autocomplete="given-name" class="sn-input">
+																	</div>
+																	<!-- Price -->
+																	<div class="col-span-6">
+																		<label for="last-name" class="sn-input-label">Price</label>
+																		<input type="text" name="last-name" id="last-name" autocomplete="family-name" class="sn-input">
+																	</div>
+																	<!-- Categorys -->
+																	<div class="col-span-6 md:col-span-3">
+																		<label for="last-name" class="sn-input-label">Categorys</label>
+																		<input type="text" name="last-name" id="last-name" autocomplete="family-name" class="sn-input">
+																	</div>
+																	<!-- Tags -->
+																	<div class="col-span-6 md:col-span-3">
+																		<label for="last-name" class="sn-input-label">Tags</label>
+																		<input type="text" name="last-name" id="last-name" autocomplete="family-name" class="sn-input">
+																	</div>
+																	<!-- Description -->
+																	<div class="col-span-6 ">
+																		<label for="description" class="sn-input-label">Description</label>
+																		<textarea name="description" id="description" class="sn-input h-32"></textarea>
+																	</div>
+																	
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+													<div class="sn-modal-content-buttons flex flex-col">
+														<button type="button" class="sn-btn-primary m-2">
+															Post Now
+														</button>
+														<button type="button" data-toggle="close-modal" class="sn-btn-gray m-2">
+															Cancel
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="grid grid-cols-6 gap-x-2  ">
+							<!-- request box -->
+							<div class="col-span-6 md:col-span-3 lg:col-span-2  ">
+								<div class="sn-bg-light sn-box my-3 px-3 py-4">
+									<!-- header -->
+									<div class="flex flex-row justify-between items center ">
+										<a href="#" class="flex justify-start items-start">
+											<img src="https://via.placeholder.com/50" alt="user"
+											class="h-10 w-10 rounded-full">
+											<div class="flex flex-col ml-2">
+												<strong class="text-sm sn-text-dark">mehdi bendali</strong>
+												<span class="text-xs sn-text-gray">4 days ago</span>
+											</div>
+										</a>
+										<div>
+											<li class="relative inline-block text-left " >
+												<div role="menu-button" class="p-2 sn-text-gray">
+													<i role="menu-button-content" class="fa fa-ellipsis-v text-sm"></i>
+												</div>
+												<div role="menu" class="hidden sn_menu">
+													<div class="py-1">
+														<a href="#" class="sn_menu_item">Edit</a>
+														<a href="#" class="sn_menu_item">Delete</a>
+													</div>
+												</div>
+											</li>
+										</div>
+									</div>
+									<!-- title -->
+									<div class="text-xl sn-text-dark font-semibold pt-2">
+										Create custom module odoo
+									</div>
+									<!-- price -->
+									<div class="text-base sn-text-secondary font-semibold pt-2">
+										200 Da - 500 DA
+									</div>
+									<!-- cover -->
+									<div class="text-sm sn-text-gray-x2  pt-2">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis mollitia unde nam nesciunt, perspiciatis cupiditate, excepturi corporis tempore illo repudiandae dolorem ipsum, voluptates veritatis quod reiciendis voluptatem culpa aspernatur similique.
+									</div>
+									<!-- tags -->
+									<div class="flex flex-row justify-start items-center mt-2 cursor-pointer flex-wrap flex-grow">
+										<a href="#2" class="sn-btn-gray m-1  text-base flex flex-row items-center justify-center">
+											<i class="text-xs fa fa-hashtag mr-1"></i> 
+											<span  class="text-xs">market</span>
+										</a>
+									</div>
+									<div class="sn-line"></div>
+									<!-- comments & reviews -->
+									<div class="flex flex-row justify-between items-center">
+										<div class="flex">
+											<div class="text-xs sn-text-gray-x2 mr-2">
+												<i class="fa fa-users ml-1.5 text-sm" aria-hidden="true"></i>
+												Applyer 20
+											</div>
+										</div>
+										<button class="text-xs sn-btn-primary mr-2" data-toggle="modal" data-target="#apply_to_request_1">
+											<i class="fa fa-info-circle text-sm" aria-hidden="true"></i>
+											See Details
+										</button>
+										<div id="apply_to_request_1" class="modal absolute hidden">
+											<div class="sn-modal-container">
+												<div class="sn-modal">
+													<div data-toggle="overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+													<div class="sn-modal-content">
+														<div class="sn-modal-content-body ">
+															<h3 class="text-2xl leading-10 font-medium text-gray-900">
+																Apply to request
+															</h3>
+															<div class="mt-2  text-gray-500 h-96">
+																<div class="text-sm">
+																	Hello <strong>nazim</strong>
+																	<br>
+																	please fill the following fileds to apply for request "add module to oddoo" 
+																	<br>
+																	posted by <strong>Amri karim</strong>
+																</div>
+																<form action="#">
+																	<div class="py-3">
+																		<div class="my-2 relative rounded-md shadow-sm">
+																			<label for="price" class="sn-input-label">Price</label>
+																			<input type="text" name="price" id="price" class="sn-input" placeholder="0.00">
+																		</div>
+																		<div class="my-2 relative rounded-md shadow-sm">
+																			<label for="description" class="sn-input-label">Description</label>
+																			<textarea name="description" id="description" class="sn-input h-40"></textarea>
+																		</div>
+																	</div>
+																</form>
+																
+
+
+															</div>
+														</div>
+														<div class="sn-modal-content-buttons flex flex-col">
+															<button type="button" class="sn-btn-primary m-2">
+																Apply
+															</button>
+															<button type="button" data-toggle="close-modal" class="sn-btn-gray m-2">
+																Cancel
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<!-- request box -->
+							<div class="col-span-6 md:col-span-3 lg:col-span-2  ">
+								<div class="sn-bg-light sn-box my-3 px-3 py-4">
+									<!-- header -->
+									<div class="flex flex-row justify-between items center ">
+										<a href="#" class="flex justify-start items-start">
+											<img src="https://via.placeholder.com/50" alt="user"
+											class="h-10 w-10 rounded-full">
+											<div class="flex flex-col ml-2">
+												<strong class="text-sm sn-text-dark">mehdi bendali</strong>
+												<span class="text-xs sn-text-gray">4 days ago</span>
+											</div>
+										</a>
+										<div>
+											<li class="relative inline-block text-left " >
+												<div role="menu-button" class="p-2 sn-text-gray">
+													<i role="menu-button-content" class="fa fa-ellipsis-v text-sm"></i>
+												</div>
+												<div role="menu" class="hidden sn_menu">
+													<div class="py-1">
+														<a href="#" class="sn_menu_item">Edit</a>
+														<a href="#" class="sn_menu_item">Delete</a>
+													</div>
+												</div>
+											</li>
+										</div>
+									</div>
+									<!-- title -->
+									<div class="text-xl sn-text-dark font-semibold pt-2">
+										Create custom module odoo
+									</div>
+									<!-- price -->
+									<div class="text-base sn-text-secondary font-semibold pt-2">
+										200 Da - 500 DA
+									</div>
+									<!-- cover -->
+									<div class="text-sm sn-text-gray-x2  pt-2">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis mollitia unde nam nesciunt, perspiciatis cupiditate, excepturi corporis tempore illo repudiandae dolorem ipsum, voluptates veritatis quod reiciendis voluptatem culpa aspernatur similique.
+									</div>
+									<!-- tags -->
+									<div class="flex flex-row justify-start items-center mt-2 cursor-pointer flex-wrap flex-grow">
+										<a href="#2" class="sn-btn-gray m-1  text-base flex flex-row items-center justify-center">
+											<i class="text-xs fa fa-hashtag mr-1"></i> 
+											<span  class="text-xs">market</span>
+										</a>
+									</div>
+									<div class="sn-line"></div>
+									<!-- comments & reviews -->
+									<div class="flex flex-row justify-between items-center">
+										<div class="flex">
+											<div class="text-xs sn-text-gray-x2 mr-2">
+												<i class="fa fa-users ml-1.5 text-sm" aria-hidden="true"></i>
+												Applyer 20
+											</div>
+										</div>
+										<button class="text-xs sn-btn-primary mr-2" data-toggle="modal" data-target="#apply_to_request_1">
+											<i class="fa fa-info-circle text-sm" aria-hidden="true"></i>
+											See Details
+										</button>
+										<div id="apply_to_request_1" class="modal absolute hidden">
+											<div class="sn-modal-container">
+												<div class="sn-modal">
+													<div data-toggle="overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+													<div class="sn-modal-content">
+														<div class="sn-modal-content-body ">
+															<h3 class="text-2xl leading-10 font-medium text-gray-900">
+																Apply to request
+															</h3>
+															<div class="mt-2  text-gray-500 h-96">
+																<div class="text-sm">
+																	Hello <strong>nazim</strong>
+																	<br>
+																	please fill the following fileds to apply for request "add module to oddoo" 
+																	<br>
+																	posted by <strong>Amri karim</strong>
+																</div>
+																<form action="#">
+																	<div class="py-3">
+																		<div class="my-2 relative rounded-md shadow-sm">
+																			<label for="price" class="sn-input-label">Price</label>
+																			<input type="text" name="price" id="price" class="sn-input" placeholder="0.00">
+																		</div>
+																		<div class="my-2 relative rounded-md shadow-sm">
+																			<label for="description" class="sn-input-label">Description</label>
+																			<textarea name="description" id="description" class="sn-input h-40"></textarea>
+																		</div>
+																	</div>
+																</form>
+																
+
+
+															</div>
+														</div>
+														<div class="sn-modal-content-buttons flex flex-col">
+															<button type="button" class="sn-btn-primary m-2">
+																Apply
+															</button>
+															<button type="button" data-toggle="close-modal" class="sn-btn-gray m-2">
+																Cancel
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<!-- request box -->
+							<div class="col-span-6 md:col-span-3 lg:col-span-2  ">
+								<div class="sn-bg-light sn-box my-3 px-3 py-4">
+									<!-- header -->
+									<div class="flex flex-row justify-between items center ">
+										<a href="#" class="flex justify-start items-start">
+											<img src="https://via.placeholder.com/50" alt="user"
+											class="h-10 w-10 rounded-full">
+											<div class="flex flex-col ml-2">
+												<strong class="text-sm sn-text-dark">mehdi bendali</strong>
+												<span class="text-xs sn-text-gray">4 days ago</span>
+											</div>
+										</a>
+										<div>
+											<li class="relative inline-block text-left " >
+												<div role="menu-button" class="p-2 sn-text-gray">
+													<i role="menu-button-content" class="fa fa-ellipsis-v text-sm"></i>
+												</div>
+												<div role="menu" class="hidden sn_menu">
+													<div class="py-1">
+														<a href="#" class="sn_menu_item">Edit</a>
+														<a href="#" class="sn_menu_item">Delete</a>
+													</div>
+												</div>
+											</li>
+										</div>
+									</div>
+									<!-- title -->
+									<div class="text-xl sn-text-dark font-semibold pt-2">
+										Create custom module odoo
+									</div>
+									<!-- price -->
+									<div class="text-base sn-text-secondary font-semibold pt-2">
+										200 Da - 500 DA
+									</div>
+									<!-- cover -->
+									<div class="text-sm sn-text-gray-x2  pt-2">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis mollitia unde nam nesciunt, perspiciatis cupiditate, excepturi corporis tempore illo repudiandae dolorem ipsum, voluptates veritatis quod reiciendis voluptatem culpa aspernatur similique.
+									</div>
+									<!-- tags -->
+									<div class="flex flex-row justify-start items-center mt-2 cursor-pointer flex-wrap flex-grow">
+										<a href="#2" class="sn-btn-gray m-1  text-base flex flex-row items-center justify-center">
+											<i class="text-xs fa fa-hashtag mr-1"></i> 
+											<span  class="text-xs">market</span>
+										</a>
+									</div>
+									<div class="sn-line"></div>
+									<!-- comments & reviews -->
+									<div class="flex flex-row justify-between items-center">
+										<div class="flex">
+											<div class="text-xs sn-text-gray-x2 mr-2">
+												<i class="fa fa-users ml-1.5 text-sm" aria-hidden="true"></i>
+												Applyer 20
+											</div>
+										</div>
+										<button class="text-xs sn-btn-primary mr-2" data-toggle="modal" data-target="#apply_to_request_1">
+											<i class="fa fa-info-circle text-sm" aria-hidden="true"></i>
+											See Details
+										</button>
+										<div id="apply_to_request_1" class="modal absolute hidden">
+											<div class="sn-modal-container">
+												<div class="sn-modal">
+													<div data-toggle="overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+													<div class="sn-modal-content">
+														<div class="sn-modal-content-body ">
+															<h3 class="text-2xl leading-10 font-medium text-gray-900">
+																Apply to request
+															</h3>
+															<div class="mt-2  text-gray-500 h-96">
+																<div class="text-sm">
+																	Hello <strong>nazim</strong>
+																	<br>
+																	please fill the following fileds to apply for request "add module to oddoo" 
+																	<br>
+																	posted by <strong>Amri karim</strong>
+																</div>
+																<form action="#">
+																	<div class="py-3">
+																		<div class="my-2 relative rounded-md shadow-sm">
+																			<label for="price" class="sn-input-label">Price</label>
+																			<input type="text" name="price" id="price" class="sn-input" placeholder="0.00">
+																		</div>
+																		<div class="my-2 relative rounded-md shadow-sm">
+																			<label for="description" class="sn-input-label">Description</label>
+																			<textarea name="description" id="description" class="sn-input h-40"></textarea>
+																		</div>
+																	</div>
+																</form>
+																
+
+
+															</div>
+														</div>
+														<div class="sn-modal-content-buttons flex flex-col">
+															<button type="button" class="sn-btn-primary m-2">
+																Apply
+															</button>
+															<button type="button" data-toggle="close-modal" class="sn-btn-gray m-2">
+																Cancel
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<!-- request box -->
+							<div class="col-span-6 md:col-span-3 lg:col-span-2  ">
+								<div class="sn-bg-light sn-box my-3 px-3 py-4">
+									<!-- header -->
+									<div class="flex flex-row justify-between items center ">
+										<a href="#" class="flex justify-start items-start">
+											<img src="https://via.placeholder.com/50" alt="user"
+											class="h-10 w-10 rounded-full">
+											<div class="flex flex-col ml-2">
+												<strong class="text-sm sn-text-dark">mehdi bendali</strong>
+												<span class="text-xs sn-text-gray">4 days ago</span>
+											</div>
+										</a>
+										<div>
+											<li class="relative inline-block text-left " >
+												<div role="menu-button" class="p-2 sn-text-gray">
+													<i role="menu-button-content" class="fa fa-ellipsis-v text-sm"></i>
+												</div>
+												<div role="menu" class="hidden sn_menu">
+													<div class="py-1">
+														<a href="#" class="sn_menu_item">Edit</a>
+														<a href="#" class="sn_menu_item">Delete</a>
+													</div>
+												</div>
+											</li>
+										</div>
+									</div>
+									<!-- title -->
+									<div class="text-xl sn-text-dark font-semibold pt-2">
+										Create custom module odoo
+									</div>
+									<!-- price -->
+									<div class="text-base sn-text-secondary font-semibold pt-2">
+										200 Da - 500 DA
+									</div>
+									<!-- cover -->
+									<div class="text-sm sn-text-gray-x2  pt-2">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis mollitia unde nam nesciunt, perspiciatis cupiditate, excepturi corporis tempore illo repudiandae dolorem ipsum, voluptates veritatis quod reiciendis voluptatem culpa aspernatur similique.
+									</div>
+									<!-- tags -->
+									<div class="flex flex-row justify-start items-center mt-2 cursor-pointer flex-wrap flex-grow">
+										<a href="#2" class="sn-btn-gray m-1  text-base flex flex-row items-center justify-center">
+											<i class="text-xs fa fa-hashtag mr-1"></i> 
+											<span  class="text-xs">market</span>
+										</a>
+									</div>
+									<div class="sn-line"></div>
+									<!-- comments & reviews -->
+									<div class="flex flex-row justify-between items-center">
+										<div class="flex">
+											<div class="text-xs sn-text-gray-x2 mr-2">
+												<i class="fa fa-users ml-1.5 text-sm" aria-hidden="true"></i>
+												Applyer 20
+											</div>
+										</div>
+										<button class="text-xs sn-btn-primary mr-2" data-toggle="modal" data-target="#apply_to_request_1">
+											<i class="fa fa-info-circle text-sm" aria-hidden="true"></i>
+											See Details
+										</button>
+										<div id="apply_to_request_1" class="modal absolute hidden">
+											<div class="sn-modal-container">
+												<div class="sn-modal">
+													<div data-toggle="overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+													<div class="sn-modal-content">
+														<div class="sn-modal-content-body ">
+															<h3 class="text-2xl leading-10 font-medium text-gray-900">
+																Apply to request
+															</h3>
+															<div class="mt-2  text-gray-500 h-96">
+																<div class="text-sm">
+																	Hello <strong>nazim</strong>
+																	<br>
+																	please fill the following fileds to apply for request "add module to oddoo" 
+																	<br>
+																	posted by <strong>Amri karim</strong>
+																</div>
+																<form action="#">
+																	<div class="py-3">
+																		<div class="my-2 relative rounded-md shadow-sm">
+																			<label for="price" class="sn-input-label">Price</label>
+																			<input type="text" name="price" id="price" class="sn-input" placeholder="0.00">
+																		</div>
+																		<div class="my-2 relative rounded-md shadow-sm">
+																			<label for="description" class="sn-input-label">Description</label>
+																			<textarea name="description" id="description" class="sn-input h-40"></textarea>
+																		</div>
+																	</div>
+																</form>
+																
+
+
+															</div>
+														</div>
+														<div class="sn-modal-content-buttons flex flex-col">
+															<button type="button" class="sn-btn-primary m-2">
+																Apply
+															</button>
+															<button type="button" data-toggle="close-modal" class="sn-btn-gray m-2">
+																Cancel
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<!-- request box -->
+							<div class="col-span-6 md:col-span-3 lg:col-span-2  ">
+								<div class="sn-bg-light sn-box my-3 px-3 py-4">
+									<!-- header -->
+									<div class="flex flex-row justify-between items center ">
+										<a href="#" class="flex justify-start items-start">
+											<img src="https://via.placeholder.com/50" alt="user"
+											class="h-10 w-10 rounded-full">
+											<div class="flex flex-col ml-2">
+												<strong class="text-sm sn-text-dark">mehdi bendali</strong>
+												<span class="text-xs sn-text-gray">4 days ago</span>
+											</div>
+										</a>
+										<div>
+											<li class="relative inline-block text-left " >
+												<div role="menu-button" class="p-2 sn-text-gray">
+													<i role="menu-button-content" class="fa fa-ellipsis-v text-sm"></i>
+												</div>
+												<div role="menu" class="hidden sn_menu">
+													<div class="py-1">
+														<a href="#" class="sn_menu_item">Edit</a>
+														<a href="#" class="sn_menu_item">Delete</a>
+													</div>
+												</div>
+											</li>
+										</div>
+									</div>
+									<!-- title -->
+									<div class="text-xl sn-text-dark font-semibold pt-2">
+										Create custom module odoo
+									</div>
+									<!-- price -->
+									<div class="text-base sn-text-secondary font-semibold pt-2">
+										200 Da - 500 DA
+									</div>
+									<!-- cover -->
+									<div class="text-sm sn-text-gray-x2  pt-2">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis mollitia unde nam nesciunt, perspiciatis cupiditate, excepturi corporis tempore illo repudiandae dolorem ipsum, voluptates veritatis quod reiciendis voluptatem culpa aspernatur similique.
+									</div>
+									<!-- tags -->
+									<div class="flex flex-row justify-start items-center mt-2 cursor-pointer flex-wrap flex-grow">
+										<a href="#2" class="sn-btn-gray m-1  text-base flex flex-row items-center justify-center">
+											<i class="text-xs fa fa-hashtag mr-1"></i> 
+											<span  class="text-xs">market</span>
+										</a>
+									</div>
+									<div class="sn-line"></div>
+									<!-- comments & reviews -->
+									<div class="flex flex-row justify-between items-center">
+										<div class="flex">
+											<div class="text-xs sn-text-gray-x2 mr-2">
+												<i class="fa fa-users ml-1.5 text-sm" aria-hidden="true"></i>
+												Applyer 20
+											</div>
+										</div>
+										<button class="text-xs sn-btn-primary mr-2" data-toggle="modal" data-target="#apply_to_request_1">
+											<i class="fa fa-info-circle text-sm" aria-hidden="true"></i>
+											See Details
+										</button>
+										<div id="apply_to_request_1" class="modal absolute hidden">
+											<div class="sn-modal-container">
+												<div class="sn-modal">
+													<div data-toggle="overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+													<div class="sn-modal-content">
+														<div class="sn-modal-content-body ">
+															<h3 class="text-2xl leading-10 font-medium text-gray-900">
+																Apply to request
+															</h3>
+															<div class="mt-2  text-gray-500 h-96">
+																<div class="text-sm">
+																	Hello <strong>nazim</strong>
+																	<br>
+																	please fill the following fileds to apply for request "add module to oddoo" 
+																	<br>
+																	posted by <strong>Amri karim</strong>
+																</div>
+																<form action="#">
+																	<div class="py-3">
+																		<div class="my-2 relative rounded-md shadow-sm">
+																			<label for="price" class="sn-input-label">Price</label>
+																			<input type="text" name="price" id="price" class="sn-input" placeholder="0.00">
+																		</div>
+																		<div class="my-2 relative rounded-md shadow-sm">
+																			<label for="description" class="sn-input-label">Description</label>
+																			<textarea name="description" id="description" class="sn-input h-40"></textarea>
+																		</div>
+																	</div>
+																</form>
+																
+
+
+															</div>
+														</div>
+														<div class="sn-modal-content-buttons flex flex-col">
+															<button type="button" class="sn-btn-primary m-2">
+																Apply
+															</button>
+															<button type="button" data-toggle="close-modal" class="sn-btn-gray m-2">
+																Cancel
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</main>
+		<!-- footer -->
+		<footer>
+			<div class="sn-bg-dark ">
+				<div class="sn-container flex flex-col md:flex-row justify-between items-center md:items-start ">
+					<div class="flex-1 flex flex-col items-center md:items-start px-1.5 ">
+						<a href="index.html" title=""><img class="h-482" src="/public/images/logo.png" alt="logo"></a>
+						<span class="  text-3xl sn-text-white font-medium"> Sanaa Dz</span>
+					</div>
+					<div class="flex-1 h-full px-1.5 my-2 md:my-0 text-center md:text-left">
+						<h4 class="text-xl sn-text-white font-normal">Policy</h4>
+						<ul>
+							<li class="sn-text-gray my-2"><a href="#">Help Center</a></li>
+							<li class="sn-text-gray my-2"><a href="#">About</a></li>
+							<li class="sn-text-gray my-2"><a href="#">Privacy Policy</a></li>
+							<li class="sn-text-gray my-2"><a href="#">Community Guidelines</a></li>
+						</ul>
+					</div>
+
+					<div class="flex-1 h-full px-1.5 my-2 md:my-0 text-center md:text-left">
+						<h4 class="text-xl sn-text-white font-normal">General</h4>
+						<ul>
+							<li class="sn-text-gray my-2"><a href="#">Cookies Policy</a></li>
+							<li class="sn-text-gray my-2"><a href="#">Career</a></li>
+							<li class="sn-text-gray my-2"><a href="#">Language</a></li>
+							<li class="sn-text-gray my-2"><a href="#">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="flex-1 flex flex-col  items-center md:items-start px-1.5">
+						<h4 class="text-xl sn-text-white font-normal">Get our app from</h4>
+						<button class="sn-footer-app-btn">
+							<img src="../public/images/google-play.svg" class="w-8 mx-3">
+							<span class="font-semibold">Google Play</span>
+						</button>
+						<button class="sn-footer-app-btn">
+							<img src="../public/images/app-store.svg" class="w-8 mx-3">
+							<span class="font-semibold">App Store</span>
+						</button>
+					</div>
+
+				</div>
+			</div>
+			<div class="h-24 md:h-16 sn-bg-darken sn-text-white  ">
+				<div class="sn-container h-full flex flex-col md:flex-row justify-between items-center">
+					<div class="relative inline-block text-left">
+						<button type="button" role="menu-button"  class="flex flex-row items-center btn sn-btn-white">
+							<i role="menu-button-content"  class="fa fa-globe h-full"></i>
+							<span role="menu-button-content" class="mx-2">Language</span>
+						</button>
+						<div style="top: -130px;left: 15px;" role="menu" class="hidden sn_menu">
+							<div class="py-1" role="none">
+								<a href="?lang=en" class="sn_menu_item ">
+									<span class="flex flex-row justify-start items-center">
+										<img src="https://via.placeholder.com/100" alt="Flag" class="w-8 h-6 mr-3">
+										English
+									</span>
+								</a>
+								<a href="?lang=ar" class="sn_menu_item">
+									<span class="flex flex-row justify-start items-center">
+										<img src="https://via.placeholder.com/100" alt="Flag" class="w-8 h-6 mr-3">
+										Arabic
+									</span>
+								</a>
+								<a href="?lang=fr" class="sn_menu_item">
+									<span class="flex flex-row justify-start items-center">
+										<img src="https://via.placeholder.com/100" alt="Flag" class="w-8 h-6 mr-3">
+										French
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div>Sanaa DZ © All copyrights reserved</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script src="./js/dropdown.js" ></script>
+	<script src="./js/modal.js" ></script>
+	<script src="./js/main.js" ></script>
+		
+
+</body>
+
+</html>

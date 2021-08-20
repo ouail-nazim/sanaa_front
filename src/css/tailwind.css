@@ -9,7 +9,7 @@
   /* colors */
   --light: #ffffff;
   --white: #fafafa;
-  --dark: #333333;
+  --dark: #282828;
   --darken: #1a1a1a;
   --gray: #cacbce;
   --grayen: #888888;
@@ -131,6 +131,19 @@
 .sn-btn-primary {
   @apply py-1 px-2 focus-within:border-transparent focus:outline-none;
   background-color: var(--primary);
+  color: var(--white);
+  border-radius: var(--radius);
+}
+
+.sn-btn-google-sign-up{
+  @apply py-3 px-2 focus-within:border-transparent focus:outline-none;
+  background-color: #DB4437;
+  color: var(--white);
+  border-radius: var(--radius);
+}
+.sn-btn-facebook-sign-up{
+  @apply py-3 px-2 focus-within:border-transparent focus:outline-none;
+  background-color: #4267B2;
   color: var(--white);
   border-radius: var(--radius);
 }

@@ -19,10 +19,12 @@ class NavTab{
             }
         })
         this.tabBtns.forEach(tab_btn => {
-            if(tab_btn.getAttribute('data-target') === target){
-                tab_btn.classList.add("sn-text-primary");
-            }else{
-                tab_btn.classList.remove("sn-text-primary");
+            if (tab_btn.getAttribute('data-change')!== "false") {
+                if(tab_btn.getAttribute('data-target') === target){
+                    tab_btn.classList.add("sn-text-primary");
+                }else{
+                    tab_btn.classList.remove("sn-text-primary");
+                }
             }
         })
 
